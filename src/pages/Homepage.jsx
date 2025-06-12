@@ -1,54 +1,35 @@
 // src/pages/Homepage.jsx
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // <-- 1. Import useNavigate
 import "../css/Homepage.css";
 import { FaSearch, FaUser, FaHeart, FaShoppingCart } from "react-icons/fa";
-import { useCart } from '../context/CartContext'; // Import useCart
+import { useAuth } from '../context/AuthContext';
+import { useCart } from '../context/CartContext';
+import { productsData } from '../data/products.js';
 
 const Homepage = () => {
-  const { addToCart, getCartItemCount } = useCart(); // Get addToCart and getCartItemCount from context
-
-  const featuredProducts = [
-    {
-      id: "1", // Ensure IDs are strings if used as keys directly in some scenarios, or ensure consistency
-      name: "iPhone 15 Pro Max",
-      price: 170000, // Use numbers for price for calculations
-      image: "../src/assets/iphone15pro.jpg", // Adjust path if needed, or use placeholder
-    },
-    {
-      id: "2",
-      name: "Samsung Galaxy S24",
-      price: 150000,
-      image: "../src/assets/SamsungS24.jpg",
-    },
-    {
-      id: "3",
-      name: "Sony WH-1000XM5",
-      price: 45000,
-      image: "../src/assets/Sony WH-1000XM5.jpg",
-    },
-    {
-      id: "4",
-      name: "Apple MacBook Air M3",
-      price: 210000,
-      image: "../src/assets/Apple MacBook Air M3.jpg",
-    },
-  ];
+  const { addToCart, getCartItemCount } = useCart();
+  const { user, logout } = useAuth();
+  const navigate = useNavigate(); // <-- 2. Initialize the navigate function
 
   const handleAddToCart = (product) => {
-    // The product object passed to addToCart should include id, name, price, and image (optional for cart logic but good for display)
     addToCart({
       id: product.id,
       name: product.name,
       price: product.price,
-      image: product.image // Pass image to cart context if you want to display it in cart
+      image: product.image
     });
-    // Optionally, add a toast notification here
     console.log(`${product.name} added to cart!`);
   };
 
+  // 3. Create a new function to handle the complete logout process
+  const handleLogout = () => {
+    logout();      // This clears the user state
+    navigate('/'); // This navigates the user back to the homepage, forcing a clean refresh
+  };
+
   return (
-    <div className="Homepage">
+    <div className="homepage">
       {/* Header */}
       <header className="header">
         <div className="logo">Gadgetify</div>
@@ -57,20 +38,32 @@ const Homepage = () => {
           <button><FaSearch /></button>
         </div>
         <div className="icons">
-          <Link to="/login">
-            <FaUser />
-          </Link>
-          <FaHeart /> {/* Wishlist functionality not implemented yet */}
-          <Link to="/cart" className="cart"> {/* Link cart icon to /cart */}
+          {user ? (
+            <>
+              <span style={{ fontSize: '14px', marginRight: '10px' }}>
+                Hi, {user.name || 'User'}
+              </span>
+              {/* 4. Use the new handleLogout function here */}
+              <button onClick={handleLogout} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#dc3545', fontSize: '14px' }}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/login" title="Login/Register">
+              <FaUser />
+            </Link>
+          )}
+          <FaHeart />
+          <Link to="/cart" className="cart">
             <FaShoppingCart />
-            <span className="badge">{getCartItemCount()}</span> {/* Dynamic cart item count */}
+            <span className="badge">{getCartItemCount()}</span>
           </Link>
         </div>
       </header>
 
-      {/* Category Nav */}
+      {/* ... (rest of your Homepage JSX remains the same) ... */}
       <nav className="category-nav">
-        <ul>
+         <ul>
           <li>Mobiles</li>
           <li>Laptops</li>
           <li>Headphones</li>
@@ -80,9 +73,8 @@ const Homepage = () => {
         </ul>
       </nav>
 
-      {/* Hero Banner */}
       <section className="hero">
-         <img src="../src/assets/Banner.jpg" alt="Hero Banner" /> {/* Ensure this path is correct */}
+        <img src="../src/assets/Banner.jpg" alt="Hero Banner" />
         <div className="hero-content">
           <h1>Latest Tech Deals</h1>
           <p>Save up to 40% on top brands</p>
@@ -90,21 +82,21 @@ const Homepage = () => {
         </div>
       </section>
 
-      {/* Featured Products */}
       <section className="featured">
         <h2>Featured Products</h2>
         <div className="product-grid">
-          {featuredProducts.map(product => (
+          {productsData.map(product => (
             <div key={product.id} className="product-card">
-              <img src={product.image || `https://placehold.co/220x200/e2e8f0/4a5568?text=${product.name.substring(0,10)}`} alt={product.name} />
-              <h3>{product.name}</h3>
-              <p>Rs. {product.price.toLocaleString()}</p> {/* Format price */}
-              <button onClick={() => handleAddToCart(product)}>Add to Cart</button> {/* Call handleAddToCart */}
+              <Link to={`/product/${product.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <img src={product.image} alt={product.name} />
+                <h3>{product.name}</h3>
+              </Link>
+              <p>Rs. {product.price.toLocaleString()}</p>
+              <button onClick={() => handleAddToCart(product)}>Add to Cart</button>
             </div>
           ))}
         </div>
       </section>
-      {/* You might want a footer here */}
     </div>
   );
 };
