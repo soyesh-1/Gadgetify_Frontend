@@ -1,0 +1,97 @@
+/* src/css/OrderSuccessPage.css */
+.order-success-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh; /* Use min-height to allow footer to be below if content is short */
+  padding: 2rem;
+  background-color: #f8f9fa; /* Light background for the page */
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.success-card {
+  background-color: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.success-icon {
+  font-size: 5rem; /* Large icon */
+  color: #28a745; /* Green color for success */
+  margin-bottom: 1.5rem;
+}
+
+.success-card h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.success-card p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.success-card p:last-of-type {
+  margin-bottom: 2rem; /* More space before buttons */
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 480px) {
+  .success-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+/* General Button Styles (if not already globally defined, ensure consistency) */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  display: inline-block; /* Ensures proper spacing and alignment for link buttons */
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  box-shadow: 0 4px 10px rgba(108, 117, 125, 0.2);
+}
