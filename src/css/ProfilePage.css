@@ -1,0 +1,93 @@
+/* src/css/ProfilePage.css */
+.profile-page-container {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.profile-form-container {
+  background-color: white;
+  padding: 2.5rem 3rem; /* Increased padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+}
+
+.profile-form-container h1 {
+  text-align: center;
+  margin-bottom: 2.5rem; /* Increased margin */
+  font-size: 2.2rem; /* Larger font size */
+  color: #343a40;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.5rem; /* Increased spacing between fields */
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600; /* Bolder label */
+  margin-bottom: 0.6rem;
+  color: #495057;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.8rem 1rem; /* Better padding */
+  border: 1px solid #ced4da; /* Slightly lighter border */
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.form-group input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.btn-primary-profile {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1.5rem; /* More space above button */
+  transition: background-color 0.2s ease;
+}
+.btn-primary-profile:hover {
+  background-color: #0056b3;
+}
+
+.error-message, .success-message {
+  padding: 0.8rem;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.success-message {
+  color: #155724;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+}

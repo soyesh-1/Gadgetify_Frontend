@@ -1,6 +1,7 @@
 /* src/css/CheckoutPage.css */
 .checkout-page {
   width: 100%;
+<<<<<<< HEAD
   max-width: 900px; /* Slightly narrower for focused checkout */
   margin: 2rem auto;
   padding: 1.5rem 2rem;
@@ -8,11 +9,19 @@
   border-radius: 8px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   font-family: 'Segoe UI', sans-serif;
+=======
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+>>>>>>> sprint2
 }
 
 .checkout-page.empty-checkout {
   text-align: center;
   padding: 3rem;
+<<<<<<< HEAD
 }
 
 .empty-checkout h2 {
@@ -24,11 +33,23 @@
 .empty-checkout p {
   font-size: 1rem;
   color: #666;
+=======
+  background-color: #fff;
+  border-radius: 8px;
+}
+.empty-checkout h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.empty-checkout p {
+  font-size: 1rem;
+>>>>>>> sprint2
   margin-bottom: 1.5rem;
 }
 
 .checkout-header {
   text-align: center;
+<<<<<<< HEAD
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
@@ -52,17 +73,53 @@
   padding: 1.5rem;
   border-radius: 6px;
   border: 1px solid #e7e7e7;
+=======
+  margin-bottom: 2.5rem;
+}
+.checkout-header h1 {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* On larger screens, use a two-column layout */
+@media (min-width: 992px) {
+  .checkout-layout {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.order-summary-section,
+.shipping-info-section {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e7e7e7;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+>>>>>>> sprint2
 }
 
 .order-summary-section h2,
 .shipping-info-section h2 {
+<<<<<<< HEAD
   font-size: 1.4rem;
   color: #34495e; /* Another shade of blue/gray */
+=======
+  font-size: 1.5rem;
+  color: #34495e;
+>>>>>>> sprint2
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #dfe6e9;
   padding-bottom: 0.75rem;
 }
 
+<<<<<<< HEAD
 /* Order Summary Specifics */
 .order-items-list {
   display: flex;
@@ -71,17 +128,30 @@
   margin-bottom: 1.5rem;
 }
 
+=======
+.order-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+>>>>>>> sprint2
 .order-item {
   display: flex;
   align-items: center;
   gap: 1rem;
+<<<<<<< HEAD
   padding-bottom: 1rem;
+=======
+  padding-bottom: 1.5rem;
+>>>>>>> sprint2
   border-bottom: 1px dashed #e0e0e0;
 }
 .order-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
+<<<<<<< HEAD
 
 .order-item-image img {
   width: 60px; /* Smaller images for summary */
@@ -102,10 +172,26 @@
   margin-bottom: 0.25rem;
 }
 
+=======
+.order-item-image img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.order-item-details {
+  flex-grow: 1;
+}
+.order-item-details h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+>>>>>>> sprint2
 .order-item-details p {
   font-size: 0.9rem;
   color: #555;
 }
+<<<<<<< HEAD
 
 .order-item-price p {
   font-size: 1rem;
@@ -117,11 +203,24 @@
 .order-total {
   margin-top: 1rem;
   padding-top: 1rem;
+=======
+.order-item-price p {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.order-total {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+>>>>>>> sprint2
   border-top: 2px solid #34495e;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+<<<<<<< HEAD
 
 .order-total h3 {
   font-size: 1.2rem;
@@ -136,15 +235,31 @@
 }
 
 /* Shipping Form Specifics */
+=======
+.order-total h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.order-total p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #007bff;
+}
+
+>>>>>>> sprint2
 .shipping-form {
   display: grid;
   gap: 1.25rem;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> sprint2
 .form-group {
   display: flex;
   flex-direction: column;
 }
+<<<<<<< HEAD
 
 .form-group label {
   font-size: 0.9rem;
@@ -153,17 +268,29 @@
   margin-bottom: 0.3rem;
 }
 
+=======
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+>>>>>>> sprint2
 .form-group input {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
+<<<<<<< HEAD
   transition: border-color 0.2s ease;
+=======
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+>>>>>>> sprint2
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #007bff;
+<<<<<<< HEAD
   box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
 }
 
@@ -178,18 +305,35 @@
   gap: 1rem;
 }
 
+=======
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.checkout-actions-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+>>>>>>> sprint2
 .btn-place-order {
   font-size: 1.1rem;
   padding: 0.8rem 2rem;
 }
 
+<<<<<<< HEAD
 /* General Button Styles (Ensure these are consistent or defined globally) */
+=======
+>>>>>>> sprint2
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+<<<<<<< HEAD
   transition: background-color 0.2s ease, transform 0.1s ease;
   border: none;
   font-size: 1rem;
@@ -231,3 +375,9 @@
     width: 100%;
   }
 }
+=======
+  border: none;
+}
+.btn-primary { background-color: #007bff; color: white; }
+.btn-secondary { background-color: #6c757d; color: white; }
+>>>>>>> sprint2

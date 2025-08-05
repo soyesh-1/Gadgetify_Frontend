@@ -1,6 +1,7 @@
 /* src/css/EsewaPaymentPage.css */
 .esewa-payment-page {
   width: 100%;
+<<<<<<< HEAD
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
@@ -9,18 +10,33 @@
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', sans-serif;
   color: #333;
+=======
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+>>>>>>> sprint2
 }
 
 .esewa-payment-page.empty-payment {
   text-align: center;
   padding: 3rem;
+<<<<<<< HEAD
 }
 
+=======
+  background-color: #fff;
+  border-radius: 8px;
+}
+>>>>>>> sprint2
 .empty-payment h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
+<<<<<<< HEAD
 .empty-payment p {
   font-size: 1rem;
   margin-bottom: 1.5rem;
@@ -33,25 +49,45 @@
   border-bottom: 2px solid #f0f0f0;
 }
 
+=======
+.payment-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+>>>>>>> sprint2
 .payment-header h1 {
   font-size: 2.2rem;
   color: #2c3e50;
   margin-bottom: 0.5rem;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> sprint2
 .payment-subheader {
   font-size: 1.1rem;
   color: #555;
 }
 
 .payment-details-container {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   gap: 2rem;
+=======
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+>>>>>>> sprint2
 }
 
 @media (min-width: 768px) {
   .payment-details-container {
+<<<<<<< HEAD
     flex-direction: row;
     justify-content: space-between;
   }
@@ -80,6 +116,26 @@
   border-bottom: 1px solid #dfe6e9;
 }
 
+=======
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+
+.qr-code-section {
+  padding: 1.5rem;
+  text-align: center;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.qr-code-section h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+}
+>>>>>>> sprint2
 .qr-image-wrapper {
   display: flex;
   justify-content: center;
@@ -90,6 +146,7 @@
   border: 1px dashed #ccc;
   border-radius: 6px;
 }
+<<<<<<< HEAD
 
 .qr-image-wrapper img {
   max-width: 100%;
@@ -103,18 +160,29 @@
   margin-top: 1rem;
 }
 
+=======
+.qr-image-wrapper img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+}
+>>>>>>> sprint2
 .amount-to-pay h3 {
   font-size: 1.1rem;
   color: #555;
   margin-bottom: 0.25rem;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> sprint2
 .total-amount-value {
   font-size: 1.8rem;
   font-weight: 700;
   color: #007bff;
 }
 
+<<<<<<< HEAD
 .instructions-list {
   list-style-type: decimal;
   margin-left: 1.5rem;
@@ -122,10 +190,29 @@
   line-height: 1.8;
 }
 
+=======
+.payment-instructions-section {
+  padding: 1.5rem;
+}
+.payment-instructions-section h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+.instructions-list {
+  list-style-type: decimal;
+  margin-left: 1.2rem;
+  padding-left: 0.8rem;
+  line-height: 1.8;
+}
+>>>>>>> sprint2
 .instructions-list li {
   margin-bottom: 0.75rem;
   font-size: 1rem;
 }
+<<<<<<< HEAD
 
 .instructions-list strong {
   color: #d35400; /* Orange for emphasis */
@@ -169,10 +256,27 @@
   color: #7f8c8d;
   margin-top: 0.75rem;
 }
+=======
+.instructions-list strong {
+  color: #d35400;
+}
+.after-payment-info {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #e9f7ef;
+  border-left: 4px solid #2ecc71;
+  border-radius: 4px;
+}
+.after-payment-info h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+.after-payment-info p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; }
+.contact-email { font-weight: 600; color: #007bff; }
+.processing-note { font-style: italic; font-size: 0.9rem; color: #7f8c8d; }
+>>>>>>> sprint2
 
 .payment-actions-footer {
   margin-top: 2.5rem;
   padding-top: 1.5rem;
+<<<<<<< HEAD
   border-top: 2px solid #f0f0f0;
   display: flex;
   flex-direction: column;
@@ -197,12 +301,23 @@
 }
 
 /* General Button Styles (ensure consistency) */
+=======
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+>>>>>>> sprint2
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+<<<<<<< HEAD
   transition: background-color 0.2s ease, transform 0.1s ease;
   border: none;
   font-size: 1rem;
@@ -229,3 +344,12 @@
 .btn-secondary:hover {
   background-color: #5a6268;
 }
+=======
+  border: none;
+}
+.btn-success { background-color: #28a745; color: white; }
+.btn-success:hover { background-color: #218838; }
+.btn-secondary { background-color: #6c757d; color: white; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-primary { background-color: #007bff; color: white; }
+>>>>>>> sprint2

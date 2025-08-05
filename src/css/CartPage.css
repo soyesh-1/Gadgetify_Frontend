@@ -41,6 +41,7 @@
   color: #333;
 }
 
+<<<<<<< HEAD
 .btn-clear-cart {
   font-size: 0.9rem;
 }
@@ -49,10 +50,16 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+=======
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+>>>>>>> sprint2
 }
 
 .cart-item {
   display: flex;
+<<<<<<< HEAD
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
   align-items: flex-start; /* Align items to the top */
   gap: 1rem;
@@ -64,6 +71,16 @@
 
 .cart-item-image {
   flex-shrink: 0;
+=======
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.cart-item:last-child {
+  border-bottom: none;
+>>>>>>> sprint2
 }
 
 .cart-item-image img {
@@ -76,13 +93,21 @@
 
 .cart-item-details {
   flex-grow: 1;
+<<<<<<< HEAD
   min-width: 200px; /* Ensure details don't get too squished */
+=======
+  min-width: 200px;
+>>>>>>> sprint2
 }
 
 .cart-item-details h3 {
   font-size: 1.2rem;
   color: #333;
   margin-bottom: 0.5rem;
+<<<<<<< HEAD
+=======
+  font-weight: 600;
+>>>>>>> sprint2
 }
 
 .item-price {
@@ -107,12 +132,18 @@
 }
 
 .quantity-btn {
+<<<<<<< HEAD
   background-color: #e0e0e0;
   border: none;
+=======
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+>>>>>>> sprint2
   color: #333;
   padding: 0.3rem 0.5rem;
   border-radius: 4px;
   cursor: pointer;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
   justify-content: center;
@@ -124,6 +155,17 @@
 
 .cart-item-subtotal {
   min-width: 150px; /* Give subtotal some space */
+=======
+  transition: background-color 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #dee2e6;
+}
+
+.cart-item-subtotal {
+  min-width: 150px;
+>>>>>>> sprint2
   text-align: right;
   font-size: 1.1rem;
   font-weight: 500;
@@ -131,19 +173,28 @@
 }
 
 .cart-item-actions {
+<<<<<<< HEAD
   min-width: 100px; /* Space for remove button */
+=======
+  min-width: 100px;
+>>>>>>> sprint2
   text-align: right;
 }
 
 .btn-remove {
   background-color: transparent;
   border: none;
+<<<<<<< HEAD
   color: #e53e3e; /* Red color for remove */
+=======
+  color: #e53e3e;
+>>>>>>> sprint2
   cursor: pointer;
   font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.3rem;
+<<<<<<< HEAD
 }
 
 .btn-remove:hover {
@@ -151,6 +202,15 @@
   text-decoration: underline;
 }
 
+=======
+  transition: color 0.2s ease;
+}
+.btn-remove:hover {
+  color: #c53030;
+}
+
+
+>>>>>>> sprint2
 .cart-footer {
   margin-top: 2rem;
   padding-top: 1.5rem;
@@ -172,13 +232,17 @@
   gap: 1rem;
 }
 
+<<<<<<< HEAD
 /* General Button Styles (if not already globally defined) */
+=======
+>>>>>>> sprint2
 .btn {
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
+<<<<<<< HEAD
   transition: background-color 0.2s ease, transform 0.1s ease;
   border: none;
   font-size: 1rem;
@@ -251,3 +315,24 @@
     width: 100%;
   }
 }
+=======
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+.btn-primary { background-color: #007bff; color: white; }
+.btn-primary:hover { background-color: #0056b3; }
+.btn-secondary { background-color: #6c757d; color: white; }
+.btn-secondary:hover { background-color: #5a6268; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-danger:hover { background-color: #c82333; }
+
+@media (max-width: 768px) {
+  .cart-page { padding: 1rem; }
+  .cart-item { flex-direction: column; align-items: stretch; }
+  .cart-item-subtotal, .cart-item-actions { text-align: left; margin-top: 0.5rem; }
+  .cart-footer { flex-direction: column; align-items: stretch; }
+  .cart-actions { width: 100%; flex-direction: column; }
+}
+>>>>>>> sprint2

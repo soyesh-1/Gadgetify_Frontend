@@ -1,5 +1,6 @@
 // src/pages/ProductDetailPage.jsx
 import React from 'react';
+<<<<<<< HEAD
 import { useParams, Link }
 from 'react-router-dom';
 import { useCart } from '../context/CartContext'; // To add to cart from detail page
@@ -94,6 +95,28 @@ const ProductDetailPage = () => {
       setMainImage(product.image); // Set initial main image
     }
   }, [product]);
+=======
+import { useParams, Link } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
+import { useProducts } from '../context/ProductContext';
+import '../css/ProductDetailPage.css';
+
+const ProductDetailPage = () => {
+  const { productId } = useParams();
+  const { products, loading, error } = useProducts();
+  const { addToCart } = useCart();
+
+  // Find the product from the global list fetched by the context
+  const product = products.find(p => p._id === productId);
+
+  if (loading) {
+    return <div style={{ padding: '2rem', textAlign: 'center' }}>Loading product details...</div>;
+  }
+
+  if (error) {
+    return <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>Error: {error}</div>;
+  }
+>>>>>>> sprint2
 
   if (!product) {
     return (
@@ -107,6 +130,7 @@ const ProductDetailPage = () => {
 
   const handleAddToCart = () => {
     addToCart({
+<<<<<<< HEAD
       id: product.id,
       name: product.name,
       price: product.price,
@@ -120,11 +144,22 @@ const ProductDetailPage = () => {
     setMainImage(imageSrc);
   };
 
+=======
+      id: product._id,
+      name: product.name,
+      price: product.price,
+      image: product.image
+    });
+    alert(`${product.name} added to cart!`);
+  };
+
+>>>>>>> sprint2
   return (
     <div className="product-detail-page">
       <nav aria-label="breadcrumb" className="breadcrumb-nav">
         <ol>
           <li><Link to="/">Home</Link></li>
+<<<<<<< HEAD
           <li><Link to={`/category/${product.category.toLowerCase()}`}>{product.category}</Link></li>
           <li aria-current="page">{product.name}</li>
         </ol>
@@ -157,14 +192,38 @@ const ProductDetailPage = () => {
           )}
         </div>
 
+=======
+          <li><Link to="#">{product.category}</Link></li>
+          <li aria-current="page">{product.name}</li>
+        </ol>
+      </nav>
+      <div className="product-layout">
+        <div className="product-gallery">
+          <div className="main-image-container">
+            {/* --- FIX --- */}
+            <img 
+              src={`http://localhost:5005${product.image}`}
+              alt={product.name} 
+              className="main-product-image"
+            />
+          </div>
+        </div>
+>>>>>>> sprint2
         <div className="product-info">
           <h1 className="product-name">{product.name}</h1>
           <p className="product-price">Rs. {product.price.toLocaleString()}</p>
           <div className="product-description">
             <h3>Description</h3>
+<<<<<<< HEAD
             <p>{product.description || "No description available."}</p>
           </div>
 
+=======
+            <p>{product.description}</p>
+          </div>
+          
+          {/* Restored Specifications Table */}
+>>>>>>> sprint2
           {product.specifications && product.specifications.length > 0 && (
             <div className="product-specifications">
               <h3>Specifications</h3>
@@ -186,10 +245,17 @@ const ProductDetailPage = () => {
           </button>
         </div>
       </div>
+<<<<<<< HEAD
 
       {/* We can add related products or reviews section later */}
+=======
+>>>>>>> sprint2
     </div>
   );
 };
 
+<<<<<<< HEAD
 export default ProductDetailPage;
+=======
+export default ProductDetailPage;
+>>>>>>> sprint2

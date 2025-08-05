@@ -2,11 +2,19 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 import '../css/CartPage.css'; // We'll create this CSS file next
+=======
+import '../css/CartPage.css';
+>>>>>>> sprint2
 import { FaTrash, FaPlus, FaMinus } from 'react-icons/fa';
 
 const CartPage = () => {
   const { cartItems, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCart();
+<<<<<<< HEAD
+=======
+  const API_URL_BASE = 'http://localhost:5005';
+>>>>>>> sprint2
 
   if (cartItems.length === 0) {
     return (
@@ -31,8 +39,13 @@ const CartPage = () => {
         {cartItems.map(item => (
           <div key={item.id} className="cart-item">
             <div className="cart-item-image">
+<<<<<<< HEAD
               {/* Use a placeholder or actual image if available in item object */}
               <img src={item.image || `https://placehold.co/100x100/e2e8f0/4a5568?text=${item.name.substring(0,10)}`} alt={item.name} />
+=======
+              {/* --- FIX: Correctly constructs the full URL for the image --- */}
+              <img src={`${API_URL_BASE}${item.image}`} alt={item.name} />
+>>>>>>> sprint2
             </div>
             <div className="cart-item-details">
               <h3>{item.name}</h3>
@@ -65,7 +78,10 @@ const CartPage = () => {
         </div>
         <div className="cart-actions">
           <Link to="/" className="btn btn-secondary">Continue Shopping</Link>
+<<<<<<< HEAD
           {/* Link to Checkout page will be added later */}
+=======
+>>>>>>> sprint2
           <Link to="/checkout" className="btn btn-primary">Proceed to Checkout</Link>
         </div>
       </footer>
@@ -73,4 +89,8 @@ const CartPage = () => {
   );
 };
 
+<<<<<<< HEAD
 export default CartPage;
+=======
+export default CartPage;
+>>>>>>> sprint2
